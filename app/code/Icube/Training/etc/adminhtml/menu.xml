@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Icube_Training::menu_id_contoh"
+            title="Extra"
+            module="Icube_Training"
+            dependsOnModule="Icube_Training"
+            sortOrder="10"
+            resource="Icube_Training::menu_id"
+            parent="Magento_Backend::system"
+        />
+            <add id="Icube_Training::menu_id_stores"
+                title="See Stores"
+                module="Icube_Training"
+                dependsOnModule="Icube_Training"
+                sortOrder="10"
+                resource="Icube_Training::menu_id"
+                parent="Icube_Training::menu_id_contoh"
+                action="admin/system_store/index"
+            />
+            <add id="Icube_Training::menu_id_orders"
+                title="See Orders"
+                module="Icube_Training"
+                dependsOnModule="Icube_Training"
+                sortOrder="20"
+                resource="Icube_Training::menu_id"
+                parent="Icube_Training::menu_id_contoh"
+                action="sales/order/index"
+            />
+            <add id="Icube_Training::menu_id_training"
+                title="See Training Results"
+                module="Icube_Training"
+                dependsOnModule="Icube_Training"
+                sortOrder="20"
+                resource="Icube_Training::menu_id"
+                parent="Icube_Training::menu_id_contoh"
+                action="training/index"
+            />
+            <add id="Icube_Training::menu_id_custom_table"
+                title="See Custom Table"
+                module="Icube_Training"
+                dependsOnModule="Icube_Training"
+                sortOrder="40"
+                resource="Icube_Training::menu_id"
+                parent="Icube_Training::menu_id_contoh"
+                action="training/index/data"
+            />
+    </menu>
+</config>

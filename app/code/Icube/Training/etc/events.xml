@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_login">
+        <observer name="Icube_Training_CustomerLogin" instance="Icube\Training\Observer\CustomerLogin"/>
+    </event>
+    <event name="catalog_product_save_before">
+        <observer name="Icube_Training_ProductBeforeSafe" instance="Icube\Training\Observer\ProductBeforeSafe"/>
+    </event>
+    <event name="catalog_product_save_after">
+        <observer name="Icube_Training_ProductAfterSave" instance="Icube\Training\Observer\ProductAfterSave"/>
+    </event>
+</config>
