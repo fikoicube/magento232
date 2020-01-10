@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Icube\Training\Helper\General" type="Icube\Training\Helper\GeneralOverride"/>
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="icube_training_console" xsi:type="object">
+                    Icube\Training\Console\Testing
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Icube\Training\Api\TrainingInterface" type="Icube\Training\Model\Api\Training"/>
+    <preference for="Icube\Training\Api\ResponseInterface" type="Icube\Training\Model\Api\Response"/>
+
+    <type name="Icube\Training\Controller\Index\Index">
+        <plugin name="plugin_controller_index" type="Icube\Training\Plugin\Controller\Index" sortOrder="1" disabled="false"/>
+    </type>
+
+    <virtualType name="Icube\Training\Model\ResourceModel\TableTraining\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">table_training</argument>
+            <argument name="resourceModel" xsi:type="string">Icube\Training\Model\ResourceModel\TableTraining</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="example_training_grid_data_source" xsi:type="string">Icube\Training\Model\ResourceModel\TableTraining\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
