@@ -6,4 +6,7 @@
     <event name="catalog_product_save_before">
         <observer name="Icube_Training_ProductBeforeSafe" instance="Icube\Training\Observer\ProductBeforeSafe"/>
     </event>
+    <event name="catalog_product_save_after">
+        <observer name="Icube_Training_ProductAfterSave" instance="Icube\Training\Observer\ProductAfterSave"/>
+    </event>
 </config>
